@@ -20,10 +20,9 @@ ActiveRecord::Schema.define(version: 20140727014427) do
     t.string   "name",                                               null: false
     t.text     "description",                                        null: false
     t.decimal  "asking_price",   precision: 8, scale: 2,             null: false
-    t.decimal  "decimal",        precision: 8, scale: 2,             null: false
-    t.decimal  "current_bid",    precision: 8, scale: 2,             null: false
+    t.decimal  "current_bid",    precision: 8, scale: 2
     t.integer  "auction_length",                         default: 3, null: false
-    t.integer  "buyer_id",                                           null: false
+    t.integer  "buyer_id"
     t.integer  "seller_id",                                          null: false
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false

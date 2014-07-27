@@ -1,0 +1,9 @@
+%h1
+  Your Products
+
+#new_product
+  = link_to "New Product", new_product_path
+
+#products
+  = render current_user.selling_products
+

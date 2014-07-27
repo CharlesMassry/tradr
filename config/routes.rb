@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     root "landings#show"
   end
 
+  resources :products, except: [:index]
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 end

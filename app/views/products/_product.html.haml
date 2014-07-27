@@ -1,0 +1,12 @@
+= div_for product do |product|
+  .name
+    = product.name
+  .description
+    = product.description
+  .asking_price
+    = product.asking_price
+  .time_left
+    - if product.time_left > 0
+      = time_ago_in_words(product.auction_end_time) + " left"
+    - else
+      closed
