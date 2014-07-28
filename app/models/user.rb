@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
   has_many :transactions, as: :buyers
 
   def buys(product)
-    Transaction.create(product_id: product.id,
-                       seller_id: product.seller.id,
-                       buyer_id: id)
+    Transaction.create(product: product,
+                       seller: product.seller,
+                       buyer: self)
   end
 end
