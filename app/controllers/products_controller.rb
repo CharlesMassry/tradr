@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   private
 
   def product_params

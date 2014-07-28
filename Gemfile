@@ -17,6 +17,12 @@ gem 'monban-generators', '~> 0.0.4'
 
 gem 'haml', '~> 4.0.5'
 
+gem 'braintree'
+
+group :development, :test do
+  gem 'dotenv-rails'
+end
+
 group :development do
   gem 'spring'
 end

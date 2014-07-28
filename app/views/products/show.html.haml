@@ -1,0 +1,16 @@
+.name
+  = @product.name
+.description
+  = @product.description
+.asking_price
+  = number_to_currency(@product.asking_price)
+.reserve_price
+  = number_to_currency(@product.reserve_price)
+.time_left
+  - if @product.time_left > 0
+    = (time_ago_in_words(@product.auction_end_time) + " left").sub("about ", "")
+  - else
+    closed
+.buy_it_now
+  = link_to "Buy it now", product_buy_path(@product), method: :post
+

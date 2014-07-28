@@ -1,14 +1,14 @@
 = div_for product do |product|
   .name
-    = product.name
+    = link_to product.name, product
   .description
     = product.description
   .asking_price
-    = product.asking_price
+    = number_to_currency(product.asking_price)
   .reserve_price
-    = product.reserve_price
+    = number_to_currency(product.reserve_price)
   .time_left
     - if product.time_left > 0
-      = time_ago_in_words(product.auction_end_time) + " left"
+      = (time_ago_in_words(product.auction_end_time) + " left").sub("about ", "")
     - else
       closed
